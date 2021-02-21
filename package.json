@@ -9,8 +9,8 @@
     "predocs": "rm -rf docs",
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "pretest": "eslint index.js src/*.js",
-    "test": "nyc mocha",
-    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov --disable gcov"
+    "test": "nyc ./node_modules/.bin/mocha",
+    "report-coverage": "nyc report --all --reporter=text-lcov > coverage.lcov && codecov --disable gcov"
   },
   "keywords": [],
   "author": "",
