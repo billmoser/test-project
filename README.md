@@ -1,4 +1,4 @@
-[![Travis CI w/ Logo](https://travis-ci.org/billmoser/test-project.svg?branch=master)](https://travis-ci.org/billmoser/test-project)
+[![Travis CI w/ Logo](https://travis-ci.org/billmoser/test-project.svg?branch=main)](https://travis-ci.org/billmoser/test-project)
 
 ## Project title
 A little info about your project and/ or overview that explains **what** the project is about.
