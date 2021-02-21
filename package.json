@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint index.js src/*.js",
+    "predocs": "rm -rf docs",
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "pretest": "eslint index.js src/*.js",
     "test": "mocha"

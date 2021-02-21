@@ -1,5 +1,5 @@
 # additional things not in the original .gitignore template
-docs/
+# docs/
 
 # Logs
 logs
