@@ -9,7 +9,11 @@
  * @description what is a bar?
  */
 function bar(a) {
-    return a
+    if (a === 'a') {
+        return a
+    } else {
+        return 'b'
+    }
 }
 
 export {
