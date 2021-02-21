@@ -1,0 +1,22 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "the description",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint index.js src/*.js",
+    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
+    "pretest": "eslint index.js src/*.js",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "docdash": "^1.2.0",
+    "eslint": "^7.20.0",
+    "jsdoc": "^3.6.6",
+    "mocha": "^8.3.0"
+  }
+}
