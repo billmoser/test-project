@@ -13,7 +13,13 @@
  * @description what is a foo?
  */
 function foo(a, {b='I', c=0, d=0}={}) {
-    return {a: a, options: {b:b, c:c, d:d}}
+    let result = ''
+    if (c*d > 0) {
+        result = a
+    } else {
+        result = b
+    }
+    return result
 }
 
 export {

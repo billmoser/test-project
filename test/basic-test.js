@@ -1,13 +1,13 @@
 /*global describe, it */
-'use strict'
+import { core } from '../index.js'
 
 import assert from 'assert'
 
 describe('basic tests', function () {
 
-    describe('#a test', function () {
+    describe('#core~foo test', function () {
         it('should be correct', function () {
-            assert(1 === 1, "1 === 1")
+            assert(core.foo('a') === 'I')
         });
     });
 
