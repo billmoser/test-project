@@ -1,0 +1,45 @@
+1) general setup:
+this project is set up for code which works for node and the browser
+- es2015 (es6)
+- however, no use of babel, webpack, etc - this is by design
+- so, won't work for all browsers
+
+2) test setup and travis-ci:
+
+install as devdeps:
+    "eslint": "^7.20.0",
+    "jest": "^26.6.3",
+    "cross-env": "^7.0.3",
+
+add these to scripts in package.json:
+    "pretest": "eslint index.js src/*.js",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+
+goto travis-ci.com and create an account (with github)
+create .travis.yml file with test parts and check in
+
+2) generating documentation:
+
+install as devdeps:
+    "docdash": "^1.2.0", // jsdoc template. there are many. see: https://cancerberosgx.github.io/jsdoc-templates-demo/demo/
+    "jsdoc": "^3.6.6"
+
+populate .jsdoc.json
+
+add these to scripts in package.json:
+    "predocs": "rm -rf docs",
+    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
+
+create a page for the project at github.io
+in github settings, add github pages config with:
+branch: gh-pages
+source: / (root)
+update .travis.yml for docgen-specific items
+
+3) code coverage
+
+update .travis.yml
+
+create account at codecov.io
+
+
