@@ -16,6 +16,6 @@ function bar(a) {
     }
 }
 
-export {
-    bar
+export { 
+    bar 
 }
