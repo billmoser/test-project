@@ -9,7 +9,8 @@
         "predocs": "rm -rf docs",
         "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
         "pretest": "eslint index.js src/*.js",
-        "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest && codecov"
+        "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+        "report-coverage": "codecov --disable=gcov"
     },
     "keywords": [],
     "author": "",
