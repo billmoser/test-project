@@ -1,5 +1,8 @@
 # additional things not in the original .gitignore template
 
+# jsdoc
+docs/
+
 # jest
 test-coverage/
 
