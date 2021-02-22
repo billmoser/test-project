@@ -1,7 +1,7 @@
 [![Travis CI w/ Logo](https://travis-ci.org/billmoser/test-project.svg?branch=main)](https://travis-ci.org/billmoser/test-project)
 
 ## Project title
-A little info about your project and/ or overview that explains **what** the project is about.
+A little infoo about your project and/ or overview that explains **what** the project is about.
 cribbed [from:](https://meakaakka.medium.com/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3)
 ## Motivation
 A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
