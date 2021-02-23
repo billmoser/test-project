@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-core.html">core</a><ul class='methods'><li data-type='method'><a href="module-core.html#~foo">foo</a></li></ul></li><li><a href="module-extensions.html">extensions</a><ul class='methods'><li data-type='method'><a href="module-extensions.html#~bar">bar</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <section class="readme usertext">
+        <article><p><a href="https://travis-ci.org/billmoser/test-project"><img src="https://travis-ci.org/billmoser/test-project.svg?branch=main" alt="Travis CI w/ Logo"></a>
+<a href="https://codecov.io/gh/billmoser/test-project"><img src="https://codecov.io/gh/billmoser/test-project/branch/main/graph/badge.svg" alt="CodeCov"></a>
+<a href="https://codebeat.co/projects/github-com-billmoser-test-project-main"><img src="https://codebeat.co/badges/11522fef-973b-41d8-b1ea-70da1c3cb292" alt="codebeat badge"></a>
+<a href="https://billmoser.github.io/test-project/"><img src="https://img.shields.io/badge/docs-GHpages-blue.svg" alt="Generic badge"></a>
+<a href="https://github.com/feross/standard"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"></a>
+<a href="https://snyk.io/test/github/billmoser/test-project?targetFile=package.json"><img src="https://snyk.io/test/github/billmoser/test-project/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></p>
+<h2>Test project for javascript build and deployment</h2>
+<p>An es6 javascript project to demonstrate use of travis-ci to:</p>
+<ul>
+<li>run tests using jest,</li>
+<li>push coverage results to codecov.io, and</li>
+<li>deploy jsdoc-built docs to github.io</li>
+</ul>
+<p>Note that the coverage and complexity stats (as conveyed by the badges) don't look too good -- that's intentional, to test that the tools actually work.</p>
+<h2>Motivation</h2>
+<p>I created this because I hadn't used Travis CI for build and deployment of and es6 code base, so I wanted a simple project I could use to explore the options and procedures</p>
+<h2>General setup</h2>
+<p>The project uses vanilla es6 javascript, including es6 modules.  For node compatibility, the
+package.json &quot;type&quot; is &quot;module&quot;.  There is no use of babel, webpack, etc.</p>
+<h2>Test setup and travis-ci</h2>
+<p>First, install standard, eslint, jest, and cross-env as devDependencies.  The &quot;standard&quot; package is a style checker.  &quot;eslint&quot; is used to check complexity here.  &quot;jest&quot; is the test framework, and &quot;cross-env&quot; allows you to set environment variables
+in a cross-platform way.  In this case, it's just used to make sure that node understands that es-6
+modules are in use when the tests are run.  Next, add these to the &quot;scripts&quot; section of package.json:</p>
+<ul>
+<li>&quot;complexity&quot;: &quot;eslint index.js src/<em>.js test/</em>.js&quot;,</li>
+<li>&quot;style&quot;: &quot;standard index.js src/<em>.js test/</em>.js&quot;,</li>
+<li>&quot;pretest&quot;: &quot;npm run complexity &amp;&amp; npm run style&quot;,</li>
+<li>&quot;test&quot;: &quot;cross-env NODE_OPTIONS=--experimental-vm-modules jest&quot;</li>
+</ul>
+<p>Edit .eslintrc.yml to add/modify complexity rules.  Finally, create an account at travis-ci.com, and add the .travis.yml file with test parts filled out appropriately</p>
+<h2>Generating documentation</h2>
+<p>First, install docdash, and jsdoc as devDependencies.  &quot;jsdoc&quot; is the documentation generator, and
+docdash is a template for the jsdoc output. Next, populate .jsdoc.json, and finally add these to
+&quot;scripts&quot; in package.json:</p>
+<ul>
+<li>&quot;predocs&quot;: &quot;rm -rf docs&quot;,</li>
+<li>&quot;docs&quot;: &quot;jsdoc --configure .jsdoc.json --verbose&quot;,</li>
+</ul>
+<p>You'll then need to greate a page for the project at github.io.  Then, in your github project's settings, you'll need to add the github pages config, with these options:</p>
+<ul>
+<li>branch: gh-pages</li>
+<li>source: / (root)</li>
+</ul>
+<p>Finally, update .travis.yml with the items needed for documentation generation and deployment</p>
+<h2>Code coverage</h2>
+<p>For this, just update .travis.yml to include the coverage options.  Then create ann account at codecov.io, and link your github project</p></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Feb 23 2021 19:11:59 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
