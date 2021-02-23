@@ -16,6 +16,14 @@ function foo (a, { b = 'I', c = 0, d = 0 } = {}) {
   let result = ''
   if (c * d === 0) {
     result = b
+  } else if (c * d === 1) {
+    result = a
+  } else if (c * d === 2) {
+    result = b
+  } else if (c * d === 3) {
+    result = a
+  } else if (c * d === 4) {
+    result = b
   } else {
     result = a
   }
