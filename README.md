@@ -1,5 +1,6 @@
 [![Travis CI w/ Logo](https://travis-ci.org/billmoser/test-project.svg?branch=main)](https://travis-ci.org/billmoser/test-project)
 [![CodeCov](https://codecov.io/gh/billmoser/test-project/branch/main/graph/badge.svg)](https://codecov.io/gh/billmoser/test-project)
+[![codebeat badge](https://codebeat.co/badges/11522fef-973b-41d8-b1ea-70da1c3cb292)](https://codebeat.co/projects/github-com-billmoser-test-project-main)
 [![Generic badge](https://img.shields.io/badge/docs-GHpages-blue.svg)](https://billmoser.github.io/test-project/)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Known Vulnerabilities](https://snyk.io/test/github/billmoser/test-project/badge.svg?targetFile=package.json)](https://snyk.io/test/github/billmoser/test-project?targetFile=package.json)
@@ -10,6 +11,8 @@ An es6 javascript project to demonstrate use of travis-ci to:
 - run tests using jest,
 - push coverage results to codecov.io, and
 - deploy jsdoc-built docs to github.io
+
+Note that the coverage and complexity stats (as conveyed by the badges) don't look too good -- that's intentional, to test that the tools actually work.
 
 ## Motivation
 I created this because I hadn't used Travis CI for build and deployment of and es6 code base, so I wanted a simple project I could use to explore the options and procedures
