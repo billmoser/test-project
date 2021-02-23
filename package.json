@@ -7,7 +7,9 @@
     "scripts": {
         "predocs": "rm -rf docs",
         "docs": "jsdoc --configure .jsdoc.json --verbose",
-        "pretest": "standard index.js src/*.js test/*.js",
+        "complexity": "eslint index.js src/*.js test/*.js",
+        "style": "standard index.js src/*.js test/*.js",
+        "pretest": "npm run complexity && npm run style",
         "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
     },
     "keywords": [],

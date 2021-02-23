@@ -14,10 +14,10 @@
  */
 function foo (a, { b = 'I', c = 0, d = 0 } = {}) {
   let result = ''
-  if (c * d > 0) {
-    result = a
-  } else {
+  if (c * d === 0) {
     result = b
+  } else {
+    result = a
   }
   return result
 }
