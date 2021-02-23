@@ -1,9 +1,9 @@
 [![Travis CI w/ Logo](https://travis-ci.org/billmoser/test-project.svg?branch=main)](https://travis-ci.org/billmoser/test-project)
-[![CodeCov](https://codecov.io/gh/tterb/yt2mp3/branch/master/graph/badge.svg)](https://codecov.io/gh/tterb/yt2mp3)
-[![Generic badge](https://img.shields.io/badge/docs-GHpages-green.svg)](https://billmoser.github.io/test-project/)
+[![CodeCov](https://codecov.io/gh/billmoser/test-project/branch/main/graph/badge.svg)](https://codecov.io/gh/billmoser/test-project)
+[![Generic badge](https://img.shields.io/badge/docs-GHpages-blue.svg)](https://billmoser.github.io/test-project/)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Known Vulnerabilities](https://snyk.io/test/github/billmoser/test-project/badge.svg?targetFile=package.json)](https://snyk.io/test/github/billmoser/test-project?targetFile=package.json)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Test project for javascript build and deployment
 An es6 javascript project to demonstrate use of travis-ci to: 
