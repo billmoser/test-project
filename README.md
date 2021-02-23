@@ -1,62 +1,44 @@
 [![Travis CI w/ Logo](https://travis-ci.org/billmoser/test-project.svg?branch=main)](https://travis-ci.org/billmoser/test-project)
-
-## Project title
-A little infoo about your project and/ or overview that explains **what** the project is about.
-cribbed [from:](https://meakaakka.medium.com/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3)
-## Motivation
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
-
-## Build status
-Build status of continus integration i.e. travis, appveyor etc. Ex. - 
-
-<!--
-[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
--->
-
-## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
-
+[![CodeCov](https://codecov.io/gh/tterb/yt2mp3/branch/master/graph/badge.svg)](https://codecov.io/gh/tterb/yt2mp3)
+[![Generic badge](https://img.shields.io/badge/docs-GHpages-green.svg)](https://billmoser.github.io/test-project/)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
- 
-## Screenshots
-Include logo/demo screenshot etc.
+[![Known Vulnerabilities](https://snyk.io/test/github/billmoser/test-project/badge.svg?targetFile=package.json)](https://snyk.io/test/github/billmoser/test-project?targetFile=package.json)
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
-## Tech/framework used
-Ex. -
+## Test project for javascript build and deployment
+An es6 javascript project to demonstrate use of travis-ci to: 
+- run tests using jest,
+- push coverage results to codecov.io, and
+- deploy jsdoc-built docs to github.io
 
-<b>Built with</b>
-- [Electron](https://electron.atom.io)
+## Motivation
+I created this because I hadn't used Travis CI for build and deployment of and es6 code base, so I wanted a simple project I could use to explore the options and procedures
 
-## Features
-What makes your project stand out?
+## General setup
+The project uses vanilla es6 javascript, including es6 modules.  For node compatibility, the
+package.json "type" is "module".  There is no use of babel, webpack, etc.
 
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+## Test setup and travis-ci
+First, install standard, jest, and cross-env ad devDependencies.  The "standard" package is a style checker.  "jest" is the test framework, and "cross-env" allows you to set environment variables
+in a cross-platform way.  In this case, its just used to make sure that node understands that es-6
+modules are in use when the tests are run.  Next, add these to the "scripts" section of package.json:
+ - "pretest": "standard index.js src/*.js",
+ - "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+Finally, create and account at travis-ci.com, and add the .travis.yml file with test parts filled out appropriately
 
-## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+## Generating documentation
+First, install docdash, and jsdoc as devDependencies.  "jsdoc" is the documentation generator, and
+docdash is a template for the jsdoc output. Next, populate .jsdoc.json, and finally add these to
+"scripts" in package.json:
+  - "predocs": "rm -rf docs",
+  - "docs": "jsdoc --configure .jsdoc.json --verbose",
+You'll then need to greate a page for the project at github.io.  Then, in your github project's settings, you'll need to add the github pages config, with these options:
+ - branch: gh-pages
+ - source: / (root)
+ Finally, update .travis.yml with the items needed for documentation generation and deployment
 
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-Describe and show how to run the tests with code examples.
-
-## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
+## Code coverage
+For this, just update .travis.yml to include the coverage options.  Then create ann account at codecov.io, and link your github project
 
 ## Credits
 Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
-
-#### Anything else that seems useful
-
-## License
-A short snippet describing the license (MIT, Apache etc)
-
-MIT © [Yourname]()
